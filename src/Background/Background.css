@@ -1,0 +1,25 @@
+.background {
+    height: 100%;
+    width: 100%;
+}
+
+.background .content, .background .pacman-wrapper {
+    width: 30%;
+    margin-left: 35%;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.background .content {
+    height: 90%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.background .pacman-wrapper {
+    height: 10%;
+    flex-direction: row;
+    justify-content: space-between;
+}

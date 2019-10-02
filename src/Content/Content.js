@@ -1,31 +1,73 @@
 import React from 'react';
-import './Content.css';
+import './Content.scss';
 
 export class Content extends React.Component {
+    didUpdate;
+
     constructor(props) {
         super(props);
         this.state = {
+            id: props.id,
             title: props.title,
             content: props.content,
-            visible: props.visible,
-            isRight: props.isRight
+            needsUpdate: false
         }
     }
 
-    render() {
-        let htmlClass;
-        if (!this.props.isRight && !this.props.visible) {
-            htmlClass = 'hide-content-to-left';
-        }
-        else if (this.props.visible) {
-            htmlClass = 'show-content-from-right';
-        }
-        else if (this.props.isRight) {
-            htmlClass = 'hide-content';
-        }
+    componentDidMount() {
+        this.setHtmlClass(true);
+    }
 
+    componentDidUpdate() {
+        if (this.state.needsUpdate && !this.didUpdate) {
+            this.setHtmlClass();
+            this.didUpdate = true;
+        } else {
+            this.didUpdate = false;
+        }
+    }
+
+    setHtmlClass(first) {
+        if (first) {
+            if (this.props.id === 0) this.setPosition(false, true, false, 'show-content-from-right');
+            else this.setPosition(false, false, true, 'hide-content hide-content-to-right');
+            this.didUpdate = true;
+            return;
+        }
+        let result = '';
+        if (this.props.selected === this.state.id) {
+            if (this.state.isLeft) {
+                result = 'show-content-from-left';
+                this.setPosition(false, true, false, result);
+            }
+            else if (this.state.isRight) {
+                result = 'show-content-from-right';
+                this.setPosition(false, true, false, result);
+            }
+        }
+        else if (this.state.id > this.props.selected) {
+            result = 'hide-content-to-right';
+            this.setPosition(false, false, true, result);
+        }
+        else if (this.state.id < this.props.selected) {
+            result = 'hide-content-to-left';
+            this.setPosition(true, false, false, result);
+        }
+    }
+
+    setPosition(left, visible, right, htmlClass) {
+        this.setState({
+            htmlClass: htmlClass,
+            isLeft: left,
+            isVisible: visible,
+            isRight: right,
+            needsUpdate: true,
+        })
+    }
+
+    render() {
         return (
-            <div className={htmlClass}>
+            <div className={this.state.htmlClass}>
                 <div className='content-title'>
                     {this.state.title}
                 </div>

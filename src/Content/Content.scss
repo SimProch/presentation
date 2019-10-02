@@ -13,27 +13,30 @@
 }
 
 .hide-content {
-    position: absolute;
-    margin-left: 1500px;
+    visibility: hidden;
 }
 
 .show-content-from-right {
     position: absolute;
+    min-width: 500px;
     animation: drop-in-left 1.25s linear forwards;
 }
 
 .hide-content-to-left {
     position: absolute;
+    min-width: 500px;
     animation: drop-out-left 1.25s linear forwards;
 }
 
 .show-content-from-left {
     position: absolute;
+    min-width: 500px;
     animation: drop-in-right 1.25s linear forwards;
 }
 
 .hide-content-to-right {
     position: absolute;
+    min-width: 500px;
     animation: drop-out-right 1.25s linear forwards;
 }
 

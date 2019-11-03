@@ -37,9 +37,9 @@ jobs:
 
           
       - snyk/scan:
-        fail-on-issues: "false"
-        monitor-on-build: "false"
-        severity-threshold: "high"
+          fail-on-issues: false
+          monitor-on-build: false
+          severity-threshold: high
 
       # Run linting
       - run:

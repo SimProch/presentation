@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "@csstools/normalize.css": "^10.1.0",
     "@size-limit/preset-app": "^2.1.6",
     "eslint": "^6.6.0",
     "gh-pages": "^2.1.1"

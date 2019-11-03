@@ -41,7 +41,7 @@ jobs:
 
       - run:
           name: "Cypress integration test"
-          command: "npm run ci:cypress-run"
+          command: "sudo apt-get install libgconf-2-4 && npm run ci:cypress-run"
           
       # Run size checker
       - run:

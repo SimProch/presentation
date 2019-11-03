@@ -53,7 +53,7 @@ jobs:
           command: "npm run test"
           
       # Puppeteer
-      - puppeteer/install:
+      - run: puppeteer/install
 
       # Run size checker
       - run:

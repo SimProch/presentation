@@ -6,17 +6,7 @@ version: 2.1
 orbs:
   snyk: snyk/snyk@0.0.8
 commands:
-  # This code is licensed from CircleCI to the user under the MIT license. See
-# https://circleci.com/orbs/registry/licensing for details.
-# This code is licensed from CircleCI to the user under the MIT license. See
-# https://circleci.com/orbs/registry/licensing for details.
-version: 2.1
-description: |
-  "Install puppeteer and headless chrome
-  Source: https://circleci.com/gh/threetreeslight/puppeteer-orb"
-
-commands:
-  install:
+  puppeteer-install:
     description: Install puppeteer and headless chrome
     steps:
     - run:
@@ -79,7 +69,7 @@ jobs:
           command: "npm run test"
           
       # Puppeteer
-      - puppeteer
+      - puppeteer-install
 
       # Run size checker
       - run:

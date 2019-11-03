@@ -16,7 +16,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.js --max-warnings 5",
-    "size": "yarn build && size-limit",
+    "size": "npm run build && size-limit",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },

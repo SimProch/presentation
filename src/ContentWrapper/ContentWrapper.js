@@ -1,5 +1,5 @@
 import React from 'react';
-import './ContentWrapper.scss'
+import './ContentWrapper.css'
 import { Content } from '../Content/Content'
 
 export class ContentWrapper extends React.Component {

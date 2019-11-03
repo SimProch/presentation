@@ -1,5 +1,5 @@
 import React from 'react';
-import './Pacman.scss';
+import './Pacman.css';
 
 export class Pacman extends React.Component {
     constructor(props) {

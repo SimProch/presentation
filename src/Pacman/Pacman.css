@@ -1,0 +1,38 @@
+#pacman {
+  width: 20px;
+  height: 20px;
+  cursor: pointer; }
+
+.show-pacman #pacman circle {
+  stroke: white;
+  fill: none;
+  transform-origin: 50% 50%;
+  transform: rotate(90deg);
+  -webkit-animation: show-pacman-anim 1.25 linear forwards;
+  -moz-animation: show-pacman-anim 1.25s linear forwards;
+  animation: show-pacman-anim 1.25s linear forwards; }
+
+.hide-pacman #pacman circle {
+  stroke: white;
+  fill: none;
+  transform-origin: 50% 50%;
+  transform: rotate(90deg);
+  -webkit-animation: hide-pacman-anim 1.25 linear forwards;
+  -moz-animation: hide-pacman-anim 1.25s linear forwards;
+  animation: hide-pacman-anim 1.25s linear forwards; }
+
+@keyframes show-pacman-anim {
+  0% {
+    stroke-width: 1;
+    stroke-dasharray: 0; }
+  100% {
+    stroke-dasharray: 10, 3;
+    stroke-width: 50%; } }
+
+@keyframes hide-pacman-anim {
+  0% {
+    stroke-dasharray: 10, 3;
+    stroke-width: 50%; }
+  100% {
+    stroke-dasharray: 0;
+    stroke-width: 1; } }

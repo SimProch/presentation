@@ -1,5 +1,5 @@
 import React from 'react';
-import './Content.scss';
+import './Content.css';
 
 export class Content extends React.Component {
     didUpdate;

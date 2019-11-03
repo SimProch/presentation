@@ -42,7 +42,7 @@ jobs:
         
       - run:
           name: "Cypress integration test"
-          command: "sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 && npm run ci:cypress-run"
+          command: "sudo apt-get update -y && apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 && npm run ci:cypress-run"
           
       # Run size checker
       - run:

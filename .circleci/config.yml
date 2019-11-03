@@ -42,3 +42,8 @@ jobs:
       - run:
           name: "Testing"
           command: "npm run test"
+          
+      # Run size checker
+      - run:
+          name: "Checking size of app"
+          command: "npm run size"

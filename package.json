@@ -20,11 +20,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "size-limit": [
-    {
-      "path": "build/static/**/*.{js,css,svg,woff,woff2,png,ttf,html}"
-    }
-  ],
   "eslintConfig": {
     "extends": "react-app"
   },

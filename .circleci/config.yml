@@ -6,6 +6,8 @@ version: 2.1
 orbs:
   snyk: snyk/snyk@0.0.8
   puppeteer: threetreeslight/puppeteer@0.1.2
+commands:
+  puppeteer: puppeteer/install
 jobs:
   build:
     docker:
@@ -53,7 +55,7 @@ jobs:
           command: "npm run test"
           
       # Puppeteer
-      - run: puppeteer/install
+      - puppeteer
 
       # Run size checker
       - run:

@@ -22,21 +22,7 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
       - run: npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-            - cypress
-          key: v1-dependencies-{{ checksum "package.json" }}
-
           
       - snyk/scan:
           fail-on-issues: false
@@ -55,7 +41,7 @@ jobs:
 
       - run:
           name: "Cypress integration test"
-          command: "npm run cypress install && npm run ci:cypress-run"
+          command: "npm run ci:cypress-run"
           
       # Run size checker
       - run:

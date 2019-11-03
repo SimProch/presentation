@@ -55,7 +55,7 @@ jobs:
 
       - run:
           name: "Cypress integration test"
-          command: "cypress install && npm run ci:cypress-run"
+          command: "npm run cypress install && npm run ci:cypress-run"
           
       # Run size checker
       - run:

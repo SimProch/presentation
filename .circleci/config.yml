@@ -6,11 +6,6 @@ version: 2.1
 orbs:
   snyk: snyk/snyk@0.0.8
   cypress: cypress-io/cypress@1
-commands:
-  cypress-deps: 
-    description: "Get cypress deps"
-    steps:
-      - run: "sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2"
 jobs:
   build:
     docker:
@@ -44,9 +39,10 @@ jobs:
           name: "Testing"
           command: "npm run test"
 
+        
       - run:
           name: "Cypress integration test"
-          command: "cypress-deps && npm run ci:cypress-run"
+          command: "sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 && npm run ci:cypress-run"
           
       # Run size checker
       - run:

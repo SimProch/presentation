@@ -5,7 +5,7 @@
 version: 2.1
 orbs:
   snyk: snyk/snyk@0.0.8
-  puppeteer: threetreeslight/puppeteer@0.1.2
+  cypress: cypress-io/cypress@1
 jobs:
   build:
     docker:
@@ -51,6 +51,10 @@ jobs:
       - run:
           name: "Testing"
           command: "npm run test"
+
+      - run:
+        name: "Cypress integration test",
+        command: "npm run ci:cypress-run"
           
       # Run size checker
       - run:

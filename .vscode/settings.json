@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/2a836599-40e9-41ba-ae76-f3df32614a5a/resourceGroups/Presentation/providers/Microsoft.Web/sites/simproch-presentation",
+    "appService.deploySubpath": ""
+}

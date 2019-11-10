@@ -17,7 +17,6 @@
     "eject": "react-scripts eject",
     "node-sass": "node-sass --include-path ./src --include-path ./node_modules src/ -o src/",
     "lint": "eslint src/**/*.js --max-warnings 5",
-    "cypress:run-local": "cypress run --record --key=0dad2b70-df97-455b-b473-3c86a2ce94f8",
     "cypress:run": "cypress run --record --key=${CYPRESS_RECORD_KEY}",
     "ci:cypress-run": "start-server-and-test start http://localhost:3000 cypress:run",
     "predeploy": "npm run build",

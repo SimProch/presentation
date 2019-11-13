@@ -21,7 +21,7 @@
     "ci:cypress-run": "start-server-and-test start http://localhost:3000 cypress:run",
     "setup-git": "git config --global user.email 'myBuild@simproch.com' && git config --global user.name 'myBuild'",
     "predeploy": "npm run setup-git && npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -u='Github Build <builds@simproch.com>' -r='https://${GH_TOKEN}@github.com/gh-pages'"
   },
   "eslintConfig": {
     "extends": "react-app"

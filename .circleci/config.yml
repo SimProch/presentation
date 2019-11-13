@@ -46,4 +46,8 @@ jobs:
       # Run size checker
       - run:
           name: "Build"
-          command: "npm run build"
+          command: "npm run predeploy"
+
+      - run:
+        name: "Deploy to github pages"
+        command: "npm run deploy"

@@ -48,6 +48,10 @@ jobs:
           name: "Build and set git"
           command: "npm run predeploy"
 
+      - add_ssh_keys:
+          fingerprints:
+            - "2e:a3:7f:33:f1:9d:19:50:59:68:03:8b:ab:79:ff:d5"
+
       - run:
           name: "Deploy to github pages"
           command: "npm run deploy"

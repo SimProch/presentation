@@ -19,7 +19,8 @@
     "lint": "eslint src/**/*.js --max-warnings 5",
     "cypress:run": "cypress run --record --key=${CYPRESS_RECORD_KEY}",
     "ci:cypress-run": "start-server-and-test start http://localhost:3000 cypress:run",
-    "predeploy": "npm run build",
+    "setup-git": "git config --global user.email 'myBuild@simproch.com' && git config --global user.name 'myBuild'",
+    "predeploy": "npm run setup-git && npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

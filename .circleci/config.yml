@@ -45,7 +45,7 @@ jobs:
           
       # Run size checker
       - run:
-          name: "Build"
+          name: "Build and set git"
           command: "npm run predeploy"
 
       - run:

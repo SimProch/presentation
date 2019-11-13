@@ -49,5 +49,5 @@ jobs:
           command: "npm run predeploy"
 
       - run:
-        name: "Deploy to github pages"
-        command: "npm run deploy"
+          name: "Deploy to github pages"
+          command: "npm run deploy"
